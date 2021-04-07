@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from sqlighter import SQLighter
 from stopgame import StopGame
 
-logging.basicConfig(filename="bot.log", level=logging.INFO,
+logging.basicConfig(filename="bot.log", level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S')
 
