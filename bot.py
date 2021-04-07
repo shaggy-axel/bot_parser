@@ -1,11 +1,12 @@
 import config
 import logging
 
+import asyncio
 from aiogram import Bot, Dispatcher, executor, types
 from sqlighter import SQLighter
 from stopgame import StopGame
 
-logging.basicConfig(filename="bot.log", level=logging.DEBUG,
+logging.basicConfig(filename="bot.log", level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S')
 
@@ -63,7 +64,7 @@ async def scheduled(wait_for):
 				nfo = sg.game_info(ng)
 
 				# получаем список подписчиков бота
-				subscriptions = db.get_subscriptions()
+				subscriptions = db.get_subscribtions()
 
 				# отправляем всем новость
 				with open(sg.download_image(nfo['image']), 'rb') as photo:
